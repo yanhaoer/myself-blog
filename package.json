@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/node": "^18.7.13",
+    "antd": "^4.22.7",
+    "craco-antd": "^2.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "vite-plugin-imp": "^2.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
