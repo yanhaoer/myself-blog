@@ -2,13 +2,16 @@ import React from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import "./login-form.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const FormItem = Form.Item;
+  const navigate = useNavigate();
 
   // 表单提交函数
   const handleSubmit = (v: any) => {
     if (v.username === "admin" && v.password === "123456") {
+      navigate("/dashboard");
       console.log("Received values of form: ", v);
     } else {
       console.log("用户名或密码错误!");
