@@ -1,6 +1,12 @@
 import React from "react";
+import HomeHeader from "@components/home-header";
 
+HomeHeader
 function Dashboard() {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <HomeHeader />
+    </div>
+  );
 }
 export default Dashboard;
