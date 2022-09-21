@@ -4,13 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build:beta": "vite build --mode beta",
+    "build:release": "vite build --mode release",
+    "preview": "vite preview",
+    "serve": "vite preview"
   },
   "dependencies": {
     "@types/node": "^18.7.13",
     "antd": "^4.22.7",
+    "axios": "^0.27.2",
     "craco-antd": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

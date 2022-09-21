@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   // 表单提交函数
-  const handleSubmit = (v: any) => {
+  const handleSubmit = (v) => {
     if (v.username === "admin" && v.password === "123456") {
       navigate("/dashboard");
       console.log("Received values of form: ", v);

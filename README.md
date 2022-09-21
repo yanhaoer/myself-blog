@@ -196,3 +196,91 @@ resolve: {
 yarn add @types/node --save-dev
 ```
 
+## 五、设置环境变量
+
+##### 修改package.json
+
+```json
+  "scripts": {
+    "dev": "vite --mode development",
+    "build": "tsc && vite build",
+    "build:beta": "vite build --mode beta",
+    "build:release": "vite build --mode release",
+    "preview": "vite preview",
+    "serve": "vite preview"
+  },
+```
+
+##### 定义env
+
+```js
+console.log('process:::env', process.argv)
+```
+
+```js
+const env = process.argv[process.argv.length - 1]
+```
+
+##### vite.config.js配置
+
+```js
+...
+const env = process.argv[process.argv.length - 1]
+const base = config[env]
+...
+export default defineConfig({
+	base: base.cdn
+})
+```
+
+##### config添加index.js
+
+```js
+export default {
+  development: {
+    cdn: './',
+    apiBaseUrl: '/api' // 开发环境接口请求，后用于 proxy 代理配置
+  },
+  beta: {
+    cdn: '//s.xxx.com/vite-react-app/beta', // 测试环境 cdn 路径
+    apiBaseUrl: '//www.beta.xxx.com/v1' // 测试环境接口地址
+  },
+  release: {
+    cdn: '//s.xxx.com/vite-react-app/release', // 正式环境 cdn 路径
+    apiBaseUrl: '//www.xxx.com/v1' // 正式环境接口地址
+  }
+}
+```
+
+### 六、配置Axios
+
+##### vite.config.js
+
+```js
+...
+export default defineConfig({
+	...
+	server: {
+    port: 3001, // 开发环境启动的端口
+    proxy: {
+      '/api': {
+        // 当遇到 /api 路径时，将其转换成 target 的值，这里我们为了测试，写了新蜂商城的请求地址
+        target: 'http://47.99.134.126:28019/api/v1',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '') // 将 /api 重写为空
+      }
+    }
+  }
+})
+```
+
+##### 测试接口
+
+```react
+  useEffect(() => {
+    get('/index-infos').then(() => {
+      
+    })
+  }, [])
+```
+
