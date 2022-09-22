@@ -284,23 +284,42 @@ export default defineConfig({
   }, [])
 ```
 
-## 七、引入Scss
+## 七、引入Less
+
+##### 安装
 
 ```
-yarn add scss
+yarn add less
+yarn add less-loader
 ```
 
 ##### 配置vite
 
 ```json
-scss: {
-        additionalData: "@import './src/style/index.scss';", // 全局公共样式
+  css: {
+    preprocessorOptions: {
+      less: {
+        charset: false,
+        javascriptEnabled: true,
+        modifyVars: {
+          "@primary-color": "#02107e", //设置antd主题色
+        },
+        additionalData: '@import "@/assets/styles/global.less";'
       },
+    },
+  },
 ```
 
-##### App.module.scss引入文件
+##### 全局样式编写
 
 ```js
-import styles from "./App.module.scss"; //引入文件
+@color:#63C4D4;
 ```
 
+##### 组件使用
+
+```js
+.title{
+ 	color:@color;
+ }
+```
