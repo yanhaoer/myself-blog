@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 import LoginForm from "./login-form/login-form";
-import "./index.css";
+import "./index.less";
 
 function Login() {
   return (

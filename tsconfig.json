@@ -38,7 +38,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/views/dashboard/index.js"
-, "src/views/dashboard/index.jsx", "src/views/dashboard/index.jsx", "src/services/index.jsx", "src/main.tsx", "src/App.tsx", "src/views/login/index.jsx", "src/views/login/login-form/login-form.jsx", "src/components/home-header/index.jsx", "src/components/home-footer/index.jsx", "src/routers/index.jsx"  ],
+, "src/views/dashboard/index.jsx", "src/views/dashboard/index.jsx", "src/services/index.jsx", "src/main.tsx", "src/App.tsx", "src/views/login/index.tsx", "src/views/login/login-form/login-form.jsx", "src/components/home-header/index.jsx", "src/components/home-footer/index.jsx", "src/routers/index.jsx"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

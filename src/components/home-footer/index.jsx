@@ -1,9 +1,9 @@
 import React from 'react'
-
+import "./index.less";
 export default function HomeFooter() {
   return (
     <div>
-      HomeFooter
+      <p className="title">HomeFooter</p> 
     </div>
   )
 }

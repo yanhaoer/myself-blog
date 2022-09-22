@@ -1,7 +1,7 @@
 import React from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
-import "./login-form.css";
+import "./login-form.less";
 import { useNavigate } from "react-router-dom";
 
 function Login() {

@@ -252,7 +252,7 @@ export default {
 }
 ```
 
-### 六、配置Axios
+## 六、配置Axios
 
 ##### vite.config.js
 
@@ -282,5 +282,25 @@ export default defineConfig({
       
     })
   }, [])
+```
+
+## 七、引入Scss
+
+```
+yarn add scss
+```
+
+##### 配置vite
+
+```json
+scss: {
+        additionalData: "@import './src/style/index.scss';", // 全局公共样式
+      },
+```
+
+##### App.module.scss引入文件
+
+```js
+import styles from "./App.module.scss"; //引入文件
 ```
 

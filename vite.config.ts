@@ -26,10 +26,12 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
+        charset: false,
         javascriptEnabled: true,
         modifyVars: {
           "@primary-color": "#02107e", //设置antd主题色
         },
+        additionalData: '@import "@/assets/styles/global.less";'
       },
     },
   },
@@ -38,7 +40,7 @@ export default defineConfig({
     alias: {
       "@": path.join(__dirname, "./src"),
       "@components": path.join(__dirname, "./src/components"),
-      "@services": path.join(__dirname, "./src/services")
+      "@services": path.join(__dirname, "./src/services"),
     },
   },
   server: {
