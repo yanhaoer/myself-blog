@@ -1,9 +1,9 @@
 import { Affix, Input } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
 import "./index.less";
-function HomeHeader() {
+
+const HomeHeader = () => {
   return (
     <Affix>
       <div className="homeHeader">
@@ -21,13 +21,7 @@ function HomeHeader() {
             </div>
           </div>
           <div className="SearchWrapper">
-            {/* <CSSTransition
-              in={this.props.focused}
-              timeout={200}
-              classNames="slide"
-            > */}
             <Input className="NavSearch" placeholder="搜索" />
-            {/* </CSSTransition> */}
           </div>
         </div>
       </div>

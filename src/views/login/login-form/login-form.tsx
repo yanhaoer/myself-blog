@@ -4,12 +4,16 @@ import { Button, Checkbox, Form, Input } from "antd";
 import "./login-form.less";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+interface login {
+  username?: string,
+  password?: string
+}
+
+const Login: React.FC<login> = () => {
   const FormItem = Form.Item;
   const navigate = useNavigate();
-
   // 表单提交函数
-  const handleSubmit = (v) => {
+  const handleSubmit = (v:login) => {
     if (v.username === "admin" && v.password === "123456") {
       navigate("/dashboard");
       console.log("Received values of form: ", v);
